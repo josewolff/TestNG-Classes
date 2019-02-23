@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Example" preserve-order="true" allow-return-values="true" verbose="1">
+   <parameter name="FirstParameter" value="Hello class :)"/>
+    <parameter name="SecondParameter" value="Class"/>
+    <test name="Example">
+        <classes>
+            <class name="parametersExample.ParametersExample"/>
+            <class name="operators.OperatorTests"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="listeners.ListenerTest"/>
+        <listener class-name="listeners.ListenerSuite"/>
+    </listeners>
+</suite>
