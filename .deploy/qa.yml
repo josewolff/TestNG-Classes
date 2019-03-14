@@ -1,0 +1,2 @@
+env: "qa"
+host: "https://localhost:5001/"

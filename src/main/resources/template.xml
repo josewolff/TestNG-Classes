@@ -1,0 +1,28 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Devops TestSuite" preserve-order="true" allow-return-values="true" verbose="1">
+    <parameter name="host" value="{{host}}"/>
+    <parameter name="env" value="{{env}}"/>
+    <parameter name="groupsToRun" value="{{groupsToRun}}"/>
+
+    <test name="Devops Ufm">
+        {% if groupsToRun|length > 0 %}
+        <groups>
+            <run>
+                {% for group in groupsToRun -%}
+                <include name="{{ group }}"/>
+                {% endfor -%}
+            </run>
+        </groups>
+        {% endif %}
+        <classes>
+            <class name="integrationTests.users.CreateNewUser"/>
+            <class name="integrationTests.users.GetAllUsers"/>
+            <class name="integrationTests.users.DeleteUsers"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="listeners.IntegrationTestsListener"/>
+    </listeners>
+</suite>

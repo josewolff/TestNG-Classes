@@ -1,0 +1,2 @@
+env: "dev"
+host: "https://localhost:5001/"
