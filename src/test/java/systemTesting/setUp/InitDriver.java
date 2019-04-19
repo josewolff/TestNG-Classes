@@ -22,7 +22,7 @@ public class InitDriver {
 
     @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
-    public void openDriver(@Optional("safari") String browser) throws IOException {
+    public void openDriver(@Optional("chrome") String browser) throws IOException {
         initDriver(browser);
     }
 

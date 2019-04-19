@@ -11,7 +11,7 @@
         
         <groups>
             <run>
-                <include name="system"/>
+                <include name="refactorPomClasses"/>
                 </run>
         </groups>
         
@@ -20,7 +20,10 @@
             <class name="integrationTests.users.GetAllUsers"/>
             <class name="integrationTests.users.DeleteUsers"/>
 
-            <class name="systemTesting.checkdrivers"/>
+            <class name="systemTesting.exampleWithoutPom.ExampleNoPom"/>
+            <class name="systemTesting.exampleWithPom.ExamplePom"/>
+            <class name="systemTesting.refactoringPom.ExamplePom"/>
+            <class name="systemTesting.refactoringPomDifferentClasses.ExamplePom"/>
         </classes>
     </test>
 
