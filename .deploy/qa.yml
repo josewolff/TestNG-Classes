@@ -1,2 +1,4 @@
 env: "qa"
 host: "https://localhost:5001/"
+
+seleniumHost: "https://getbootstrap.com/docs/4.3/examples/checkout/"

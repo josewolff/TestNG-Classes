@@ -21,6 +21,7 @@ public class GenerateTestNGFile {
     public static void main (String[] args) throws IOException {
         String env = args[0];
         String groupsToRun = args[1];
+        String testType = args[2];
         Map<String, Object> context = new HashMap<String, Object>();
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         String testNgTemplatePath = System.getProperty("user.dir") + "/src/main/resources/template.xml";
@@ -30,6 +31,8 @@ public class GenerateTestNGFile {
         ConfigurationFile configurations = mapper.readValue(new File(".deploy/" + env + ".yml"), ConfigurationFile.class);
         context.put("env", configurations.getEnv());
         context.put("host", configurations.getHost());
+        context.put("seleniumHost", configurations.getSeleniumHost());
+        context.put("testType",testType);
         context.put("groupsToRun", groupsToRun.split(","));
         String testNgFile = renderTemplate(context, testNgTemplatePath);
         writeFile(testNgFile, "testng.xml");

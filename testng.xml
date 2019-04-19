@@ -1,17 +1,32 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Example" preserve-order="true" allow-return-values="true" verbose="1">
-   <parameter name="FirstParameter" value="Hello class :)"/>
-    <parameter name="SecondParameter" value="Class"/>
-    <test name="Example">
+<suite name="Devops TestSuite" preserve-order="true" allow-return-values="true" verbose="1">
+    <parameter name="host" value="http://d8132e54.ngrok.io/"/>
+    <parameter name="env" value="prod"/>
+    <parameter name="seleniumHost" value="https://getbootstrap.com/docs/4.3/examples/checkout/"/>
+    <parameter name="groupsToRun" value="[Ljava.lang.String;@271e435a"/>
+    <parameter name="testType" value="system"/>
+
+    <test name="Devops Ufm">
+        
+        <groups>
+            <run>
+                <include name="system"/>
+                </run>
+        </groups>
+        
         <classes>
-            <class name="parametersExample.ParametersExample"/>
-            <class name="operators.OperatorTests"/>
+            <class name="integrationTests.users.CreateNewUser"/>
+            <class name="integrationTests.users.GetAllUsers"/>
+            <class name="integrationTests.users.DeleteUsers"/>
+
+            <class name="systemTesting.checkdrivers"/>
         </classes>
     </test>
 
     <listeners>
-        <listener class-name="listeners.ListenerTest"/>
-        <listener class-name="listeners.ListenerSuite"/>
+        
+            <listener class-name="listeners.SystemTestsListener"/>
+        
     </listeners>
 </suite>

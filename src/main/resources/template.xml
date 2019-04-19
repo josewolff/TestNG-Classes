@@ -3,7 +3,9 @@
 <suite name="Devops TestSuite" preserve-order="true" allow-return-values="true" verbose="1">
     <parameter name="host" value="{{host}}"/>
     <parameter name="env" value="{{env}}"/>
+    <parameter name="seleniumHost" value="{{seleniumHost}}"/>
     <parameter name="groupsToRun" value="{{groupsToRun}}"/>
+    <parameter name="testType" value="{{testType}}"/>
 
     <test name="Devops Ufm">
         {% if groupsToRun|length > 0 %}
@@ -23,6 +25,10 @@
     </test>
 
     <listeners>
-        <listener class-name="listeners.IntegrationTestsListener"/>
+        {% if testType == "system" %}
+            <listener class-name="listeners.SystemTestsListener"/>
+        {% else %}
+            <listener class-name="listeners.IntegrationTestsListener"/>
+        {% endif %}
     </listeners>
 </suite>

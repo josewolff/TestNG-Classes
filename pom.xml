@@ -11,6 +11,7 @@
     <properties>
         <env>prod</env>
         <groupsToRun>none</groupsToRun>
+        <testType>none</testType>
     </properties>
 
     <dependencies>
@@ -58,7 +59,11 @@
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
 
     </dependencies>
 
@@ -83,6 +88,7 @@
                     <arguments>
                         <argument>${env}</argument>
                         <argument>${groupsToRun}</argument>
+                        <argument>${testType}</argument>
                     </arguments>
                 </configuration>
             </plugin>

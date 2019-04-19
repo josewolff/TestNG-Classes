@@ -9,4 +9,6 @@ public class GlobalVariables {
     public static String apiDeleteUsers = "default";;
     public static int dataProviderTimes = 15;
 
+    public static String seleniumHost = "";
+
 }
