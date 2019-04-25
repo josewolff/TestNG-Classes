@@ -6,7 +6,7 @@
     <parameter name="seleniumHost" value="{{seleniumHost}}"/>
     <parameter name="groupsToRun" value="{{groupsToRun}}"/>
     <parameter name="testType" value="{{testType}}"/>
-
+    <parameter name="browser" value="{{browser}}"/>
     <test name="Devops Ufm">
         {% if groupsToRun|length > 0 %}
         <groups>

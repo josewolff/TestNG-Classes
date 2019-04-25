@@ -22,6 +22,7 @@ public class GenerateTestNGFile {
         String env = args[0];
         String groupsToRun = args[1];
         String testType = args[2];
+        String browser = args[3];
         Map<String, Object> context = new HashMap<String, Object>();
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
         String testNgTemplatePath = System.getProperty("user.dir") + "/src/main/resources/template.xml";
@@ -34,6 +35,7 @@ public class GenerateTestNGFile {
         context.put("seleniumHost", configurations.getSeleniumHost());
         context.put("testType",testType);
         context.put("groupsToRun", groupsToRun.split(","));
+        context.put("browser", browser);
         String testNgFile = renderTemplate(context, testNgTemplatePath);
         writeFile(testNgFile, "testng.xml");
     }

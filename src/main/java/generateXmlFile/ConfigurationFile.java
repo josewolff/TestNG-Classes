@@ -8,6 +8,7 @@ public class ConfigurationFile {
     private String env;
     private String host;
     private String seleniumHost;
+    private String browser;
 
     public String getEnv() { return env; }
 
@@ -18,4 +19,6 @@ public class ConfigurationFile {
     public String getSeleniumHost() {
         return seleniumHost;
     }
+
+    public String getBrowser() { return  browser;}
 }

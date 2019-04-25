@@ -12,6 +12,7 @@
         <env>prod</env>
         <groupsToRun>none</groupsToRun>
         <testType>none</testType>
+        <browser>chrome</browser>
     </properties>
 
     <dependencies>
@@ -89,6 +90,7 @@
                         <argument>${env}</argument>
                         <argument>${groupsToRun}</argument>
                         <argument>${testType}</argument>
+                        <argument>${browser}</argument>
                     </arguments>
                 </configuration>
             </plugin>
@@ -104,5 +106,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
