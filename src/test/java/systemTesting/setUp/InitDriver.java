@@ -22,7 +22,7 @@ public class InitDriver {
 
     @Parameters({"browser"})
     @BeforeClass(alwaysRun = true)
-    public void openDriver(@Optional("chrome") String browser) throws IOException {
+    public void openDriver(@Optional("safari") String browser) throws IOException {
         initDriver(browser);
     }
 
@@ -52,6 +52,7 @@ public class InitDriver {
                     options.addArguments(new String[]{"--start-maximized"});
                     options.merge(caps);
                     driver = new ChromeDriver(options);
+
                 } else if (browser.equals("ie")) {
                     System.setProperty("webdriver.ie.driver", "drivers/windows/IEDriverServer.exe");
                     driver = new InternetExplorerDriver();

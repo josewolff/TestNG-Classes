@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import systemTestUtils.BrowserActions;
@@ -38,7 +39,11 @@ public class ExampleNoPom extends InitDriver {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cc-name"))).sendKeys("DevOpsClass");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cc-number"))).sendKeys("123412341234");
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cc-expiration"))).sendKeys("07/2019");
+        BrowserActions br = new BrowserActions(driver,wait);
+        br.takeScreenShot("testing.png");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("label + input[id=cc-cvv]"))).sendKeys("123");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Continue to checkout')]"))).click();
+        String f = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstName"))).getText();
+        Assert.assertEquals(f,"Testing");
     }
 }
