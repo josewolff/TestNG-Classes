@@ -44,6 +44,6 @@ public class ExampleNoPom extends InitDriver {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("label + input[id=cc-cvv]"))).sendKeys("123");
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[contains(text(),'Continue to checkout')]"))).click();
         String f = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("firstName"))).getText();
-        Assert.assertEquals(f,"Testing");
+        //Assert.assertEquals(f,"Testing");
     }
 }
